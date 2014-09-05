@@ -29,6 +29,12 @@ public class MainFragment extends android.support.v4.app.Fragment {
          authButton = (LoginButton) view.findViewById(R.id.authButton);
         authButton.setFragment(this);
 
+        view.findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((LoginActivity)getActivity()).startGoogleSignIn();
+            }
+        });
 
         return view;
     }
